@@ -1,0 +1,13 @@
+package com.example.springdatajpatips.enums;
+
+public enum UserLevel {
+	NONE,
+	FREE_USER,
+	EXTERNAL_USER,
+	COMPANY_ADMIN,
+	INTERNAL_USER,
+	UMS_OVERSITE_DIRECTOR,
+	TERRITORY_MANAGER,
+	TERRITORY_ADMINISTRATOR,
+	TERRITORY_PROCESSOR
+}
