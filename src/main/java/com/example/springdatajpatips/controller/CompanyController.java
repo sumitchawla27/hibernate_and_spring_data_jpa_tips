@@ -46,21 +46,6 @@ public class CompanyController {
 		return Response.getSuccessResponse(idNameDto);
 	}
 
-
-//	@PutMapping(CompanyApiUrl.COMPANY_WITH_ID)
-//	public Response<CompanyProfileResponse> modifyCompany(@PathVariable("companyId") Long companyId,
-//																												@RequestBody CompanyProfile companyProfile, @RequestParam Boolean confirmCompanyDomainRemoval) {
-//		companyProfile.validate();
-//		CompanyProfileResponse companyProfileResponse = companyService.modifyCompany(companyId, companyProfile,
-//				confirmCompanyDomainRemoval);
-//		return Response.getSuccessResponse(companyProfileResponse);
-//	}
-//
-//	@GetMapping(CompanyApiUrl.COMPANY_ADMINS)
-//	public Response<GenericListDTO<UserProfile>> listCompanyAdmins(@PathVariable("companyId") Long companyId) {
-//		return Response.getSuccessResponse(companyService.listCompanyAdminsWrapper(companyId));
-//	}
-
 	@GetMapping(CompanyApiUrl.COMPANY_WITH_ID)
 	public Response<CompanyProfileResponse> getCompany(@PathVariable("companyId") Long companyId) {
 		return Response.getSuccessResponse(companyService.getCompanyDetails(companyId));
@@ -73,7 +58,7 @@ public class CompanyController {
 	}
 
 	@GetMapping(CompanyApiUrl.COMPANY_WITH_NAME_PARAM)
-	public Response<CompanyProfileResponse> getCompanyByName(@PathVariable("name") String name) {
+	public Response<CompanyProfileResponse> getCompanyByName(@RequestParam("name") String name) {
 		return Response.getSuccessResponse(companyService.findCompanyByName(name));
 	}
 

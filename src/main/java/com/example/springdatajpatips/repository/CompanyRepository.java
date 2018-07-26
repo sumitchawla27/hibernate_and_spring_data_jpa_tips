@@ -29,12 +29,12 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
 	Optional<Company> findByIdAndStatus(Long companyId, Status status);
 
 	//2
-//	Optional<Company> findById(Long companyId);
+	Optional<Company> findById(Long companyId);
 
 	//3
-	@EntityGraph(value = "graph.countryAndTerritory", type = EntityGraph.EntityGraphType.FETCH)
-	@Query("select c from Company c where c.id=:companyId")
-	Optional<Company> findById(@Param("companyId") Long companyId);
+//	@EntityGraph(value = "graph.countryAndTerritory", type = EntityGraph.EntityGraphType.FETCH)
+//	@Query("select c from Company c where c.id=:companyId")
+//	Optional<Company> findById(@Param("companyId") Long companyId);
 
 	//4
 	//@EntityGraph(value = "graph", attributePaths = {"country","territory"})
